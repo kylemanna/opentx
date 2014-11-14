@@ -695,6 +695,8 @@ StatusType CoSetPriority(OS_TID taskID,U8 priority)
 }
 #endif
 
+extern void SwitchContextHook(void);
+
 /**
  *******************************************************************************
  * @brief      Schedule function	  
@@ -768,6 +770,9 @@ void Schedule(void)
     }   
 #endif
  	
+    //setup this hook before every task switch
+    SwitchContextHook();
+
     SwitchContext();                              /* Call task context switch */
 }
 

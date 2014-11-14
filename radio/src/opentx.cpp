@@ -3722,3 +3722,20 @@ int main(void)
 #endif
 }
 #endif // !SIMU
+
+#if defined(CPUARM)
+
+#include "OsTask.h"
+
+extern "C" void SwitchContextHook() {
+  /*Do a test here and then set a breakpoint on inner condition line
+  The TCBNext is pointer to the next thread that will be scheduled
+  The TCBRunning is pointer to the current task (which made L1 change)  which has finished
+  running*/
+
+  if (g_model.logicalSw[0].andsw!=0) {
+    g_model.points[0] = TCBRunning->taskID; // place debugger breakpoint on this line (just do one dummy assignment so that complier wont optimize it out)
+    // g_model.points[1] = TCBNext->taskID; 
+  }
+}
+#endif
