@@ -15,7 +15,7 @@
 std::list<QString> EEPROMWarnings;
 
 const char * switches9X[] = { "3POS", "THR", "RUD", "ELE", "AIL", "GEA", "TRN" };
-const char * switchesX9D[] = { "SA", "SB", "SC", "SD", "SE", "SF", "SG", "SH" };
+const char * switchesX9D[] = { "SA", "SB", "SC", "SD", "SE", "SF", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN" };
 const char leftArrow[] = {(char)0xE2, (char)0x86, (char)0x90, 0};
 const char rightArrow[] = {(char)0xE2, (char)0x86, (char)0x92, 0};
 const char upArrow[] = {(char)0xE2, (char)0x86, (char)0x91, 0};

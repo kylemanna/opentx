@@ -22,6 +22,43 @@ CalibrationPanel::CalibrationPanel(QWidget * parent, GeneralSettings & generalSe
     ui->pot3TypeLabel->hide();
   }
 
+  if (IS_TARANIS(firmware->getBoard())) {
+    ui->rudName->setField(generalSettings.anaNames[0], 3, this);
+    ui->eleName->setField(generalSettings.anaNames[1], 3, this);
+    ui->thrName->setField(generalSettings.anaNames[2], 3, this);
+    ui->ailName->setField(generalSettings.anaNames[3], 3, this);
+    ui->pot1Name->setField(generalSettings.anaNames[4], 3, this);
+    ui->pot2Name->setField(generalSettings.anaNames[5], 3, this);
+    ui->pot3Name->setField(generalSettings.anaNames[6], 3, this);
+    ui->pot4Name->setField(generalSettings.anaNames[7], 3, this);
+    ui->pot5Name->setField(generalSettings.anaNames[8], 3, this);
+    ui->saName->setField(generalSettings.switchNames[0], 3, this);
+    ui->saType->setField(generalSettings.switchConfig[0], this);
+    ui->sbName->setField(generalSettings.switchNames[1], 3, this);
+    ui->sbType->setField(generalSettings.switchConfig[1], this);
+    ui->scName->setField(generalSettings.switchNames[2], 3, this);
+    ui->scType->setField(generalSettings.switchConfig[2], this);
+    ui->sdName->setField(generalSettings.switchNames[3], 3, this);
+    ui->sdType->setField(generalSettings.switchConfig[3], this);
+    ui->seName->setField(generalSettings.switchNames[4], 3, this);
+    ui->seType->setField(generalSettings.switchConfig[4], this);
+    ui->sfName->setField(generalSettings.switchNames[5], 3, this);
+    ui->sfType->setField(generalSettings.switchConfig[5], this);
+    ui->sgName->setField(generalSettings.switchNames[6], 3, this);
+    ui->sgType->setField(generalSettings.switchConfig[6], this);
+    ui->shName->setField(generalSettings.switchNames[7], 3, this);
+    ui->shType->setField(generalSettings.switchConfig[7], this);
+    ui->siName->setField(generalSettings.switchNames[8], 3, this);
+    ui->sjName->setField(generalSettings.switchNames[9], 3, this);
+    ui->skName->setField(generalSettings.switchNames[10], 3, this);
+    ui->slName->setField(generalSettings.switchNames[11], 3, this);
+    ui->smName->setField(generalSettings.switchNames[12], 3, this);
+    ui->snName->setField(generalSettings.switchNames[13], 3, this);
+  }
+  else {
+
+  }
+
   int potsCount = GetCurrentFirmware()->getCapability(Pots);
   if (potsCount == 3) {
     ui->label_pot4->hide();
